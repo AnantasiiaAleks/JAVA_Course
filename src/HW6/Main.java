@@ -1,7 +1,5 @@
 package HW6;
 
-import Seminar6.Task3.Cat;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -128,10 +126,10 @@ public class Main {
         }
 
         Set<Notebook> filteredNotebooks = notebooks.stream()
-                .filter(laptop -> filters.getOrDefault("ram", 0) instanceof Integer && laptop.ram >= (int) filters.getOrDefault("ram", 0))
-                .filter(laptop -> filters.getOrDefault("ssd", 0) instanceof Integer && laptop.ssd >= (int) filters.getOrDefault("hdd", 0))
-                .filter(laptop -> filters.getOrDefault("os", "").equals("") || laptop.opSystem.equalsIgnoreCase((String) filters.getOrDefault("os", "")))
-                .filter(laptop -> filters.getOrDefault("color", "").equals("") || laptop.color.equalsIgnoreCase((String) filters.getOrDefault("color", "")))
+                .filter(notebook -> filters.getOrDefault("ram", 0) instanceof Integer && notebook.ram >= (int) filters.getOrDefault("ram", 0))
+                .filter(notebook -> filters.getOrDefault("ssd", 0) instanceof Integer && notebook.ssd >= (int) filters.getOrDefault("hdd", 0))
+                .filter(notebook -> filters.getOrDefault("os", "").equals("") || notebook.opSystem.equalsIgnoreCase((String) filters.getOrDefault("os", "")))
+                .filter(notebook -> filters.getOrDefault("color", "").equals("") || notebook.color.equalsIgnoreCase((String) filters.getOrDefault("color", "")))
                 .collect(Collectors.toSet());
 
         System.out.println("Подобрали для вас:");
